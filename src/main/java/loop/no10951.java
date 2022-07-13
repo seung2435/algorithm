@@ -10,11 +10,10 @@ public class no10951 {
     * */
     public static void main (String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st;
+        String S;
 
-        while((st = new StringTokenizer(br.readLine())) != null){
-
+        while( (S = br.readLine()) != null){
+            StringTokenizer st = new StringTokenizer(S);
             int A = Integer.parseInt(st.nextToken());
             int B = Integer.parseInt(st.nextToken());
             System.out.println(A+B);
