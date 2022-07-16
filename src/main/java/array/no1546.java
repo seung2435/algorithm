@@ -3,6 +3,7 @@ package array;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class no1546 {
     /*
@@ -15,12 +16,37 @@ public class no1546 {
     * 둘째 줄에 세준이의 현재 성적이 주어진다. 이 값은 100보다 작거나 같은 음이 아닌 정수이고, 적어도 하나의 값은 0보다 크다.
     * */
     public static void main (String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int N = Integer.parseInt(br.readLine());
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        int[] arry = new int[N];
+//        int[] newArry = new int[N];
+        int M = 0;
 
-        for (int i=0; i<N; i++){
-
+//        for (int i=0; i<N; i++){
+//            arry[i] = Integer.parseInt(st.nextToken());
+//        }
+        int N=3;
+        int[] arry = new int []{40,80 ,60};
+        int[] newArry = new int[N];
+        for(int value : arry){
+            if(value > M){
+                M = value;
+            }
         }
+        System.out.println(M);
 
+        for(int i=0; i<N; i++){
+            if (arry[i]!=M){
+                newArry[i] = arry[i] / M * 100;
+            }else{
+                newArry[i] = arry[i];
+            }
+        }
+        double sum = 0;
+        for(int i=0; i<N; i++){
+            sum =+ arry[i];
+        }
+        System.out.println(sum/N);
     }
 }
