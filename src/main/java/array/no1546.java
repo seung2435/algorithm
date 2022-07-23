@@ -1,9 +1,8 @@
 package array;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class no1546 {
     /*
@@ -16,37 +15,21 @@ public class no1546 {
     * 둘째 줄에 세준이의 현재 성적이 주어진다. 이 값은 100보다 작거나 같은 음이 아닌 정수이고, 적어도 하나의 값은 0보다 크다.
     * */
     public static void main (String[] args) throws IOException {
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        int N = Integer.parseInt(br.readLine());
-//        StringTokenizer st = new StringTokenizer(br.readLine());
-//        int[] arry = new int[N];
-//        int[] newArry = new int[N];
-        int M = 0;
+        Scanner in = new Scanner(System.in);
 
-//        for (int i=0; i<N; i++){
-//            arry[i] = Integer.parseInt(st.nextToken());
-//        }
-        int N=3;
-        int[] arry = new int []{40,80 ,60};
-        int[] newArry = new int[N];
-        for(int value : arry){
-            if(value > M){
-                M = value;
-            }
-        }
-        System.out.println(M);
+		double arr[] = new double[in.nextInt()];
 
-        for(int i=0; i<N; i++){
-            if (arry[i]!=M){
-                newArry[i] = arry[i] / M * 100;
-            }else{
-                newArry[i] = arry[i];
-            }
-        }
-        double sum = 0;
-        for(int i=0; i<N; i++){
-            sum =+ arry[i];
-        }
-        System.out.println(sum/N);
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = in.nextDouble();
+		}
+		in.close();
+
+		double sum = 0;
+		Arrays.sort(arr);
+
+		for(int i = 0; i < arr.length; i++) {
+			sum += ((arr[i] / arr[arr.length-1]) * 100);
+		}
+		System.out.print(sum / arr.length);
     }
 }
