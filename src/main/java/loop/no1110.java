@@ -1,5 +1,7 @@
 package loop;
 
+import java.util.Scanner;
+
 public class no1110 {
     /*
     * 0보다 크거나 같고, 99보다 작거나 같은 정수가 주어질 때 다음과 같은 연산을 할 수 있다.
@@ -11,6 +13,17 @@ public class no1110 {
     * N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작성하시오.
     * */
     public static void main (String[] args){
+        Scanner io = new Scanner (System.in);
+        int N = io.nextInt();
+        io.close();
+        int cnt = 0;
+        int copy = N;
 
+        do{
+            N = ((N%10)*10) + (((N/10) + (N%10)%10) %10);
+            cnt++;
+        }while(copy != N);
+
+        System.out.println(cnt);
     }
 }
