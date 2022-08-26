@@ -14,22 +14,24 @@ public class no1546 {
     * 첫째 줄에 시험 본 과목의 개수 N이 주어진다. 이 값은 1000보다 작거나 같다.
     * 둘째 줄에 세준이의 현재 성적이 주어진다. 이 값은 100보다 작거나 같은 음이 아닌 정수이고, 적어도 하나의 값은 0보다 크다.
     * */
-    public static void main (String[] args) throws IOException {
-        Scanner in = new Scanner(System.in);
+    public static void main (String[] args)  {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		float[] record = new float[N];
+		float max = 0;
+		float avg = 0;
 
-		double arr[] = new double[in.nextInt()];
-
-		for(int i = 0; i < arr.length; i++) {
-			arr[i] = in.nextDouble();
+		for(int i=0; i<record.length; i++) {
+			record[i] = sc.nextInt();
+			if(record[i]>max) {
+				max = record[i];
+			}
 		}
-		in.close();
 
-		double sum = 0;
-		Arrays.sort(arr);
-
-		for(int i = 0; i < arr.length; i++) {
-			sum += ((arr[i] / arr[arr.length-1]) * 100);
+		for(int j=0; j<record.length; j++) {
+			avg += (record[j]/max*100)/N;
 		}
-		System.out.print(sum / arr.length);
+		System.out.println(avg);
+
     }
 }
